@@ -1,0 +1,70 @@
+// Externals
+
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+
+// Basics
+@import "basics/typography";
+@import "basics/base";
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/modals";
+@import "basics/animations";
+
+// Pages
+@import "pages/contact-details";
+@import "pages/contact-edit";
+@import "pages/contact-page";
+@import "pages/home-page";
+@import "pages/statistic-page";
+
+// Components
+@import "cmps/contact-list";
+@import "cmps/contact-preview";
+@import "cmps/contact-filter";
+@import "cmps/input";
+@import "cmps/chart";
+
+.main-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .app-header {
+        background-color: #e91e63;
+        padding-inline-start: 30px;
+        padding-inline-end: 30px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        nav {
+            display: flex;
+            gap: 5px;
+        }
+
+    }
+
+    main {
+        flex-grow: 1;
+    }
+
+    // >footer {
+    //     background-color: #111;
+    //     color: white;
+    // }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #111;
+        color: white;
+        padding: 10px;
+    }
+}
