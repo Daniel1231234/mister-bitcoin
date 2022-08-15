@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom'
 
 export function ContactPreview({ contact, onRemoveContact, onSelectContactId }) {
-    const contactStyle = { backgroundImage: `url(https://robohash.org/${contact._id})` }
+    const contactStyle = { backgroundImage: `url(https://avatars.dicebear.com/api/personas/${contact._id}.svg)` }
+    // const contactStyle = { backgroundImage: `url(https://robohash.org/${contact._id})` }
     return (
         <li  style={contactStyle} className='contact-preview'>
             <section className="info">

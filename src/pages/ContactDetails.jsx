@@ -32,7 +32,8 @@ export  class ContactDetails extends Component {
         if (!contact) return <div>Loading...</div>
         return (
             <div className='contact-details'>
-                <img src={`https://robohash.org/${contact._id}`} alt="" />
+                <img src={`https://avatars.dicebear.com/api/personas/${contact._id}.svg`} alt="" />
+                {/* <img src={`https://robohash.org/${contact._id}`} alt="" /> */}
                 <section><h3>Name: {contact.name }</h3></section>
                 <section><h3>Email: {contact.email }</h3></section>
                 <section><h3>Phone: {contact.phone}</h3></section>

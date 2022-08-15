@@ -65,7 +65,7 @@ export class StatisticPage extends Component {
         <Chart datasets={marketPrice} labels={labels} />
  
           <h3>Confirmed transactions per day</h3>  
-          <Chart  datasets={transactions} labels={labels} />
+          <Chart datasets={transactions} labels={labels} />
 
       </div>
     )

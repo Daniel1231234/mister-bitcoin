@@ -56,8 +56,8 @@ export class ContactEdit extends Component {
                 <input type='text' name="email" id="email" onChange={this.handleChange} />
           
                 <button className='simple-button'>{contact._id ? 'Save' : 'Add'} </button>
-            </form>
                 <button className='simple-button' onClick={() => this.onRemoveContact(contact._id)}>Delete</button>
+            </form>
       </section>
     )
   }

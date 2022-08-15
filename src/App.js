@@ -1,4 +1,5 @@
 import "./assets/scss/global.scss"
+import React from "react"
 import { HomePage } from "./pages/HomePage"
 import { ContactPage } from "./pages/ContactPage"
 import { ContactDetails } from "./pages/ContactDetails"
@@ -7,9 +8,14 @@ import { StatisticPage } from "./pages/StatisticPage"
 import { Header } from "./cmps/Header"
 import { PrivateRoute } from "./cmps/FakeRouter"
 
+// import ToggleDark from "./cmps/ToggleDark"
+// import { ThemeContext, themes } from "./ThemeContext"
+
 import { HashRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
+  // const [darkMode, setDarkMode] = React.useState(true)
+
   return (
     <Router>
       <div className="main-app">

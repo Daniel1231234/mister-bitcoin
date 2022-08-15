@@ -35,9 +35,9 @@
     .app-header {
         background-color: #2C3333;
         color: white;
-        padding-inline-start: 30px;
-        padding-inline-end: 30px;
-        padding: 10px;
+        // padding-inline-start: 30px;
+        // padding-inline-end: 30px;
+        padding: 1rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -50,9 +50,9 @@
 
     }
 
-    main {
-        flex-grow: 1;
-    }
+    // main {
+    //     flex-grow: 1;
+    // }
 
     // >footer {
     //     background-color: #111;

@@ -16,16 +16,3 @@ import { NavLink, withRouter } from "react-router-dom";
 
 export const Header = withRouter(_Header)
 
-
-      // {/* <a href="/" className="item">
-      //   Home
-      // </a>
-      // |
-      // <a href="/contact" className="item">
-      //   <FakeRouter path="/contact" />
-      //   Contacts
-      // </a>
-      // |
-      // <a href="/chart" className="item">
-      //   Charts
-      // </a> */}

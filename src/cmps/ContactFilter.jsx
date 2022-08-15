@@ -17,19 +17,20 @@ export class ContactFilter extends Component {
     }
 
     render() {
-    const {name} = this.state
+        const { name } = this.state
+       
         return (
             <div className='contact-filter-container'>
                   <Link to="/contact/edit">Add contact</Link>
                 <form className='contact-filter'>
                     <section>
-                        <label htmlFor="name">Search Contact: {<span>&nbsp;</span>}
-                            <input value={name} onChange={this.handleChange} type="text" name="name" id="name" />
-                        </label>
+                        <label htmlFor="name">  </label> 
+                            <input value={name} onChange={this.handleChange} type="text" name="name" id="name" placeholder='Search Contact' />
+                    
                     </section>
                     {/* <section>
                         <label htmlFor="phone">Phone</label>
-                        <input value={phone} onChange={this.handleChange} type="number" name="phone" id="phone" />
+                        <input value={phone} onChange={this.handleChange} type="text" name="phone" id="phone" />
                     </section> */}
                 </form>
             </div>
