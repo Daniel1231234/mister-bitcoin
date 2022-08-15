@@ -14,10 +14,8 @@ export class HomePage extends Component {
   async loadUser() {
     try {
       const user = await userService.getUser()
-      console.log(user)
       this.setState({ user })
       const rate = await bitcoinService.getRate(user.coins)
-      console.log('rate: ', rate)
       this.setState({rate})
     } catch (err) {
       console.log(err)
@@ -29,7 +27,8 @@ export class HomePage extends Component {
     if (!user) return <div>Loadind...</div>
     return (
       <div className='home-page'>
-        <h2> Welcome back,  <span className='md-font'>{user.name.toUpperCase()}</span></h2>
+        <h2> Welcome back,  <span className='username-home md-font'>{user.name.toUpperCase()}</span></h2>
+        <hr />
         <p>You've got {user.coins} Coins</p>
         <p>The Current Bitcoin rate is: {rate}  </p>
       </div>

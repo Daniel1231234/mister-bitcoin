@@ -1,0 +1,20 @@
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+    padding: 10px;
+
+    img {
+        width: 20%;
+        background-color: #E2DCC8;
+        border-radius: 50%;
+    }
+
+    .btns-action {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+}

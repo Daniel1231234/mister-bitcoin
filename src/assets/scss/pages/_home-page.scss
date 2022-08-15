@@ -1,5 +1,14 @@
 .home-page {
-    background-color: lightcyan;
     text-align: center;
     height: 85vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1.5rem auto;
+
+    .username-home {
+        font-weight: 700;
+        color: rgb(73, 70, 29);
+    }
+
 }

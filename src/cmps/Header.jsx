@@ -1,25 +1,31 @@
-import FakeRouter from '../cmps/FakeRouter'
+// import FakeRouter from '../cmps/FakeRouter'
+import { NavLink, withRouter } from "react-router-dom";
 
-export default function Header() {
+ function _Header(props) {
   return (
     <header className="app-header">
-      {/* <div className='container'> */}
     <h1>Mister-Bitcoin</h1>
     <nav>
-      <a href="/" className="item">
-        Home
-      </a>
-      |
-      <a href="/contact" className="item">
-        <FakeRouter path="/contact" />
-        Contacts
-      </a>
-      |
-      <a href="/chart" className="item">
-        Charts
-      </a>
-        </nav>
-    {/* </div> */}
+        <NavLink exact to='/'>Home</NavLink> |
+        <NavLink exact to='/contact'>Contacts</NavLink> |
+        <NavLink exact to='/chart'>Charts</NavLink>
+    </nav>
   </header>
   )
 }
+
+export const Header = withRouter(_Header)
+
+
+      // {/* <a href="/" className="item">
+      //   Home
+      // </a>
+      // |
+      // <a href="/contact" className="item">
+      //   <FakeRouter path="/contact" />
+      //   Contacts
+      // </a>
+      // |
+      // <a href="/chart" className="item">
+      //   Charts
+      // </a> */}

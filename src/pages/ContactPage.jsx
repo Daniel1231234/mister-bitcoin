@@ -2,12 +2,11 @@ import { Component } from 'react'
 import { ContactList } from '../cmps/ContactList'
 import {ContactFilter} from '../cmps/ContactFilter'
 import { contactService } from '../services/contactService'
-import {ContactDetails} from '../pages/ContactDetails'
+// import {ContactDetails} from '../pages/ContactDetails'
 
 export class ContactPage extends Component {
     state = {
         contacts: null,
-        selectedContactId: null,
         filterBy: null,
     }
 
@@ -28,10 +27,10 @@ export class ContactPage extends Component {
     async loadContacts() {
         try {
             const contacts = await contactService.getContacts(this.state.filterBy)
-            console.log(contacts)
             this.setState({ contacts })
-        } catch(err) {console.log(err)}
-  
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     onChangeFilter = (filterBy) => {
@@ -40,18 +39,14 @@ export class ContactPage extends Component {
 
 
     render() {
-        const { contacts,selectedContactId } = this.state
+        const { contacts} = this.state
         if (!contacts) return <div>Loading...</div>
       return (
         <div className='contact-page'>
-            {selectedContactId ?
-            <ContactDetails onBack={() => this.onSelectContactId(null)} contactId={selectedContactId} /> :   
-            <>
                 <h1>Your Contacts</h1>
+                      <hr />
                 <ContactFilter  onChangeFilter={this.onChangeFilter } />
-                <ContactList contacts={contacts} onRemoveContact={this.onRemoveContact} onSelectContactId={this.onSelectContactId} />
-            </>
-            }
+                <ContactList contacts={contacts} onRemoveContact={this.onRemoveContact} history={this.props.history} />
         </div>
     )
   }
