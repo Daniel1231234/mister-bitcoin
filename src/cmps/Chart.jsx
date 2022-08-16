@@ -30,14 +30,15 @@ export class Chart extends Component {
       if (!this.props) return <div>Loading...</div>
     return (
         <div className='chart'>
-            <Line width={1000}
-                height={500}
+        <Line
+                // width={1000}
+                // height={500}
                 data={this.props}
                 options={{
                     title:{
                     display:true,
                     text:'Average Rainfall per month',
-                        fontSize: 20,
+                        fontSize: 30,
                         maintainAspectRatio: false
                     },
                     legend:{

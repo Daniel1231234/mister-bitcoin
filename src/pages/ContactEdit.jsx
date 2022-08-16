@@ -16,8 +16,7 @@ export class ContactEdit extends Component {
     handleChange = ({ target }) => {
         const field = target.name 
         const value = target.type === 'number' ? (+target.value || '') : target.value
-        this.setState(prevState => ({ contact: { ...prevState.contact, [field]: value } }))
-       
+        this.setState(prevState => ({ contact: { ...prevState.contact, [field]: value } }))   
      }
     
     onSaveContact = async (ev) => { 
@@ -34,6 +33,11 @@ export class ContactEdit extends Component {
         await contactService.deleteContact(id)
         this.setState({ contact: null })
         this.props.history.push('/contact')
+    }
+
+    onBack = () => {
+        this.props.history.push('/contact')
+        // this.props.history.goBack()
     }
     
 
@@ -56,8 +60,10 @@ export class ContactEdit extends Component {
                 <input type='text' name="email" id="email" onChange={this.handleChange} />
           
                 <button className='simple-button'>{contact._id ? 'Save' : 'Add'} </button>
-                <button className='simple-button' onClick={() => this.onRemoveContact(contact._id)}>Delete</button>
-            </form>
+                {contact._id ?  <button className='simple-button' onClick={() => this.onRemoveContact(contact._id)}>Delete</button> : <button onClick={this.onBack} className='simple-button'>Back</button>
+                }
+                {contact._id ? <button onClick={this.onBack} className='simple-button'>Back</button> : '' }
+             </form>
       </section>
     )
   }

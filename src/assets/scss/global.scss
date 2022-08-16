@@ -19,6 +19,7 @@
 @import "pages/contact-page";
 @import "pages/home-page";
 @import "pages/statistic-page";
+@import "pages/signup";
 
 // Components
 @import "cmps/contact-list";
@@ -35,8 +36,8 @@
     .app-header {
         background-color: #2C3333;
         color: white;
-        // padding-inline-start: 30px;
-        // padding-inline-end: 30px;
+        padding-inline-start: 30px;
+        padding-inline-end: 30px;
         padding: 1rem;
         display: flex;
         flex-direction: row;
@@ -46,6 +47,8 @@
         nav {
             display: flex;
             gap: 5px;
+            flex-wrap: wrap;
+
         }
 
     }

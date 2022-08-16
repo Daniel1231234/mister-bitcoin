@@ -5,8 +5,7 @@
     justify-content: center;
 
     a {
-        font-size: 1.5rem;
-
+        align-self: flex-start;
 
         &:hover {
             color: green;
@@ -15,42 +14,24 @@
 
 
     .contact-filter {
-
-        section {
-            display: flex;
-            flex-direction: row;
-            width: fit-content;
-            margin: auto;
-            justify-content: center;
-            align-items: center;
-            margin-block: 1rem;
-        }
-
-        // >section {
+        // section {
         //     display: flex;
-        //     flex-direction: column;
+        //     flex-direction: row;
+        //     width: fit-content;
+        //     margin: auto;
+        //     justify-content: center;
+        //     align-items: center;
+        //     margin-block: 1rem;
         // }
 
-        svg {
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        input {
-            font-size: 16px;
-            font-size: max(16px, 1em);
-            font-family: inherit;
-            padding: 0.25em 0.5em;
-            background-color: #F1F1F1;
-            border: 2px solid lighten(black, 30%);
-            border-radius: 4px;
+        // svg {
+        //     width: 40px;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        // }
 
-            &::after {
-                background-color: burlywood;
-            }
-        }
     }
 
 

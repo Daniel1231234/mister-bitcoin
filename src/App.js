@@ -7,6 +7,7 @@ import { ContactEdit } from "./pages/ContactEdit"
 import { StatisticPage } from "./pages/StatisticPage"
 import { Header } from "./cmps/Header"
 import { PrivateRoute } from "./cmps/FakeRouter"
+import { Signup } from "./pages/Signup"
 
 // import ToggleDark from "./cmps/ToggleDark"
 // import { ThemeContext, themes } from "./ThemeContext"
@@ -26,6 +27,7 @@ function App() {
             <PrivateRoute path="/contact/:id" component={ContactDetails} />
             <Route path="/contact" component={ContactPage} />
             <Route path="/chart" component={StatisticPage} />
+            <PrivateRoute path="/signup" component={Signup} />
             <Route path="/" component={HomePage} />
           </Switch>
         </main>

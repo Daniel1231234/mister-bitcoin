@@ -27,6 +27,7 @@ export class ContactPage extends Component {
     async loadContacts() {
         try {
             const contacts = await contactService.getContacts(this.state.filterBy)
+            // console.log(contacts)
             this.setState({ contacts })
         } catch (err) {
             console.log(err)

@@ -1,3 +1,11 @@
 .contact-list {
     grid-auto-rows: 250px;
 }
+
+.add-btn {
+    position: fixed;
+    bottom: 48px;
+    right: 31px;
+    z-index: 10;
+
+}

@@ -1,11 +1,12 @@
 import { Component } from 'react'
-import { Link } from 'react-router-dom'
+import TextField from '@mui/material/TextField';
+
 
 
 export class ContactFilter extends Component {
     state = {
         name: '',
-        phone: '',
+        // phone: '',
     }
 
     handleChange = ({ target }) => {
@@ -21,18 +22,10 @@ export class ContactFilter extends Component {
        
         return (
             <div className='contact-filter-container'>
-                  <Link to="/contact/edit">Add contact</Link>
-                <form className='contact-filter'>
                     <section>
                         <label htmlFor="name">  </label> 
-                            <input value={name} onChange={this.handleChange} type="text" name="name" id="name" placeholder='Search Contact' />
-                    
+                            <TextField value={name} onChange={this.handleChange} type="text" name="name" id="name" label={'Search Contact'} variant="standard" />
                     </section>
-                    {/* <section>
-                        <label htmlFor="phone">Phone</label>
-                        <input value={phone} onChange={this.handleChange} type="text" name="phone" id="phone" />
-                    </section> */}
-                </form>
             </div>
     )
   }

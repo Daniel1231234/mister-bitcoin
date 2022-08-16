@@ -1,0 +1,25 @@
+.signup {
+    height: 80vh;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    position: relative;
+
+    form {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 2rem;
+        box-shadow: 3px 4px 15px #00000026;
+    }
+
+    // .MuiAvatar-root {
+
+    // }
+}

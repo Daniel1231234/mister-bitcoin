@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { contactService } from '../services/contactService'
 import { Link } from 'react-router-dom'
+import { TransferFund } from '../cmps/TransferFund'
+
 
 export  class ContactDetails extends Component {
     state = { contact: null }
@@ -33,7 +35,6 @@ export  class ContactDetails extends Component {
         return (
             <div className='contact-details'>
                 <img src={`https://avatars.dicebear.com/api/personas/${contact._id}.svg`} alt="" />
-                {/* <img src={`https://robohash.org/${contact._id}`} alt="" /> */}
                 <section><h3>Name: {contact.name }</h3></section>
                 <section><h3>Email: {contact.email }</h3></section>
                 <section><h3>Phone: {contact.phone}</h3></section>
@@ -41,6 +42,7 @@ export  class ContactDetails extends Component {
                     <button onClick={this.onBack} className='simple-button medium-button'>Back</button>
                     <Link className='simple-button medium-button' to={`/contact/edit/${contact._id}`} >Edit</Link>
                 </div>
+                <TransferFund contact={contact} />
             </div>
     )
   }
