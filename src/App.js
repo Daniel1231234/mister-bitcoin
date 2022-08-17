@@ -15,7 +15,7 @@ import { Signup } from "./pages/Signup"
 import { HashRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
-  // const [darkMode, setDarkMode] = React.useState(true)
+  // const [user, setUser] = React.useState(null)
 
   return (
     <Router>
@@ -27,8 +27,8 @@ function App() {
             <PrivateRoute path="/contact/:id" component={ContactDetails} />
             <Route path="/contact" component={ContactPage} />
             <Route path="/chart" component={StatisticPage} />
-            <PrivateRoute path="/signup" component={Signup} />
-            <Route path="/" component={HomePage} />
+            <Route path="/home" component={HomePage} />
+            <PrivateRoute path="/" component={Signup} />
           </Switch>
         </main>
         <footer>Daniel Shechter 2022 &copy;</footer>

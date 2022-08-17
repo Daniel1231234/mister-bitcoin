@@ -14,7 +14,7 @@ export class TransferFund extends Component {
   async componentDidMount() {
     const user = await userService.getUser()
     this.setState({ user })
-    console.log(this.props)
+    // console.log(this.props)
   }
 
   handleChange = ({ target }) => {

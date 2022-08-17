@@ -41,10 +41,7 @@ export class StatisticPage extends Component {
     const { transactions,  labels } = this.state
     if (!transactions || !labels ) return <div>Loading...</div>
     return (
-      <div className='statistics'>
-    
-  
- 
+      <div className='statistics container'>
           <h3>Confirmed transactions per day</h3>  
           <Chart datasets={transactions} labels={labels} />
 

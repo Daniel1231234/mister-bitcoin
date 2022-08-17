@@ -1,6 +1,22 @@
-import { legacy_createStore as createStore } from "redux"
-import { contactReducer } from "./reducer/contactReducer"
+import {
+  applyMiddleware,
+  combineReducers,
+  compose,
+  legacy_createStore as createStore,
+} from "redux"
+import thunk from "redux-thunk"
+import { contactReducer } from "./reducers/contactReducer.js"
+import { userReducer } from "./reducers/userReducer.js"
 
-export const store = createStore(contactReducer)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
+const rootReducer = combineReducers({
+  contactModule: contactReducer,
+  userModule: userReducer,
+})
+
+export const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+)
 window.gStore = store

@@ -51,7 +51,7 @@ function addMoves(contact, amount) {
 function saveMove(move) {
   const user = getUser()
   const userToSave = JSON.parse(JSON.stringify(user))
-  console.log(user)
+  // console.log(user)
   userToSave.moves.push(move)
   storageService.store(KEY, userToSave)
 
@@ -62,7 +62,7 @@ function updateCoins({ amount }) {
   const user = getUser()
   const userToSave = JSON.parse(JSON.stringify(user))
   userToSave.coins -= amount
-  console.log(userToSave)
+  // console.log(userToSave)
   storageService.store(KEY, userToSave)
   return userToSave
 }

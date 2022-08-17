@@ -9,7 +9,7 @@ export class ContactEdit extends Component {
     async componentDidMount() {
         const contactId = this.props.match.params.id
         const contact = contactId ? await contactService.getContactById(contactId) : contactService.getEmptyContact()
-        console.log(contact)
+        // console.log(contact)
         this.setState({contact})
      }
     
@@ -47,8 +47,8 @@ export class ContactEdit extends Component {
 
     return (
         <section className='contact-edit'>
-            <h1>{contact._id ? 'Edit' : 'Add'} Contact</h1>
             <form onSubmit={this.onSaveContact} className="simple-form">
+            <h1>{contact._id ? 'Edit' : 'Add'} Contact</h1>
 
                 <label htmlFor='name'>Name</label>
                 <input type='text' name="name" id="name" ref={this.inputRef} onChange={this.handleChange} />

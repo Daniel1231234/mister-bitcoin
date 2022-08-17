@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-  contact: null,
+  contacts: null,
+  filterBy: null,
 }
 
 export function contactReducer(state = INITIAL_STATE, action) {
@@ -16,11 +17,27 @@ export function contactReducer(state = INITIAL_STATE, action) {
           (contact) => contact._id !== action.contact._id
         ),
       }
+
     case "ADD_CONTACT":
       return {
         ...state,
         contacts: [...state, action.contact],
       }
+
+    case "UPDATE_CONTACT":
+      return {
+        ...state,
+        contacts: state.contacts.map((contact) =>
+          contact._id === action.contact._id ? action.contact : contact
+        ),
+      }
+
+    case "SET_FILTER_BY":
+      return {
+        ...state,
+        filterBy: { ...action.filterBy },
+      }
+
     default:
       return state
   }

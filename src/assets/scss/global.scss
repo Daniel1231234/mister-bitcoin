@@ -33,8 +33,12 @@
     display: flex;
     flex-direction: column;
 
-    .app-header {
+    header {
+        width: 100%;
         background-color: #2C3333;
+    }
+
+    .app-header {
         color: white;
         padding-inline-start: 30px;
         padding-inline-end: 30px;

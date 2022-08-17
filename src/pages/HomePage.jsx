@@ -3,6 +3,9 @@ import { userService } from '../services/userService'
 import { Chart } from '../cmps/Chart'
 import { bitcoinService } from '../services/bitcoinService'
 import { MoveList } from '../cmps/MoveList'
+// import { SiBitcoinsv } from 'react-icons/fa';
+// import { SiBitcoinsv } from "react-icons/si";
+
 export class HomePage extends Component {
   state = {
     user: null,
@@ -10,7 +13,7 @@ export class HomePage extends Component {
     labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu'], 
     marketPrice: null,
   }
-
+  
   async componentDidMount() {
     const user = await userService.getUser()
     const rate = await bitcoinService.getRate(user.coins)
@@ -41,16 +44,19 @@ export class HomePage extends Component {
   render() {
     const { user, rate, marketPrice, labels } = this.state
     if (!user || !marketPrice) return <div>Loadind...</div>
+
     return (
-      <div className='home-page'>
+      <div className='home-page container'>
         <h2> Welcome back,  <span className='username-home md-font'>{user.name.toUpperCase()}</span></h2>
-        <div className='home-status'>
+        <div>
           <hr />
-          <p>Coins: {user.coins} </p>
-          <p>Btc: {rate}  </p>
+          <div className='home-status'>
+          <p>Coins:<span>{user.coins} </span> </p>
+            <p>Btc: <span>{rate}</span> </p>
+          </div>
+        <hr />
         </div>
         <section className='home-chart'>
-          <h3>Market price</h3>   
           <Chart datasets={marketPrice} labels={labels} />
         <hr />
         </section>
